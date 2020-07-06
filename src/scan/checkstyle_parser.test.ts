@@ -155,4 +155,20 @@ describe("parseCheckstyle()", () => {
 
     expect(parseCheckstyle(checkstyle, root)).toHaveLength(0)
   })
+
+  it("parses checkstyle 8.0 without any violations", () => {
+    const root = "/root/"
+    const checkstyle = {
+      declaration: { attributes: { version: "1.0", encoding: "utf-8" } },
+      elements: [
+        {
+          type: "element",
+          name: "checkstyle",
+          attributes: { version: "8.0" },
+        },
+      ],
+    }
+
+    expect(parseCheckstyle(checkstyle, root)).toHaveLength(0)
+  })
 })

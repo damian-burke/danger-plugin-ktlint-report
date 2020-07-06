@@ -21,6 +21,10 @@ export function parseCheckstyle(report: any, root: string): Violation[] {
 function parseCheckstyle8_0(report: any, root: string): Violation[] {
   const violations: Violation[] = []
 
+  if (!report.elements[0].elements) {
+    return []
+  }
+
   report.elements[0].elements.forEach(fileElement => {
     const fileName = fileElement.attributes.name.replace(root, "").replace(/^\/+/, "")
 
