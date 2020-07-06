@@ -1,4 +1,4 @@
 interface FileDiff {
   file: string
-  modified_lines: number[]
+  added_lines: number[]
 }

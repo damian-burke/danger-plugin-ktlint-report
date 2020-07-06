@@ -22,6 +22,22 @@ export async function scanReport(
   const files: string[] = []
 
   if (report.elements && report.elements[0].elements) {
+
+
+    // report.elements[0] == checkstyle tag
+    console.log(`---- Report ----`)
+    console.log(report)
+    console.log("-------")
+
+    console.log(`---- Report.elements[0] ----`)
+    console.log(report.elements[0])
+    console.log("-------")
+
+    
+    console.log(`---- Report.elements[0].elements ----`)
+    console.log(report.elements[0].elements)
+    console.log("-------")
+
     report.elements[0].elements.forEach(fileElement => {
       const fileName = fileElement.attributes.name.replace(root, "").replace(/^\/+/, "")
 
@@ -57,7 +73,7 @@ export async function scanReport(
 
       fileDiffs.push({
         file,
-        modified_lines: lineDiff,
+        added_lines: lineDiff,
       })
     }
 
