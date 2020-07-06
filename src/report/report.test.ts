@@ -5,7 +5,7 @@ declare const global: any
 describe("reportViolationsForLines()", () => {
   it("Reporting violation that is not in line diff", () => {
     const violations: Violation[] = [{ file: "/file/2", line: 2, column: 1, severity: 1, message: "Test" }]
-    const fileDiffs: FileDiff[] = [{ file: "/file/1", modified_lines: [1, 2, 3] }]
+    const fileDiffs: FileDiff[] = [{ file: "/file/1", added_lines: [1, 2, 3] }]
     const messageCallback = jest.fn()
 
     reportViolationsForLines(violations, fileDiffs, messageCallback)
@@ -16,9 +16,9 @@ describe("reportViolationsForLines()", () => {
   it("Reporting violation that is in file and line diff", () => {
     const violations: Violation[] = [{ file: "/file/1", line: 2, column: 1, severity: 1, message: "Test" }]
     const fileDiffs: FileDiff[] = [
-      { file: "/file/1", modified_lines: [1, 2, 3] },
-      { file: "/file/2", modified_lines: [1, 2, 3] },
-      { file: "/file/3", modified_lines: [1, 2, 3] },
+      { file: "/file/1", added_lines: [1, 2, 3] },
+      { file: "/file/2", added_lines: [1, 2, 3] },
+      { file: "/file/3", added_lines: [1, 2, 3] },
     ]
     const messageCallback = jest.fn()
 
@@ -30,9 +30,9 @@ describe("reportViolationsForLines()", () => {
   it("Not reporting violation that is in file but not line diff", () => {
     const violations: Violation[] = [{ file: "/file/1", line: 4, column: 1, severity: 1, message: "Test" }]
     const fileDiffs: FileDiff[] = [
-      { file: "/file/1", modified_lines: [1, 2, 3] },
-      { file: "/file/2", modified_lines: [1, 2, 3] },
-      { file: "/file/3", modified_lines: [1, 2, 3] },
+      { file: "/file/1", added_lines: [1, 2, 3] },
+      { file: "/file/2", added_lines: [1, 2, 3] },
+      { file: "/file/3", added_lines: [1, 2, 3] },
     ]
     const messageCallback = jest.fn()
 
@@ -44,9 +44,9 @@ describe("reportViolationsForLines()", () => {
   it("Not reporting violation that is not in file but in line diff", () => {
     const violations: Violation[] = [{ file: "/file/4", line: 1, column: 1, severity: 1, message: "Test" }]
     const fileDiffs: FileDiff[] = [
-      { file: "/file/1", modified_lines: [1, 2, 3] },
-      { file: "/file/2", modified_lines: [1, 2, 3] },
-      { file: "/file/3", modified_lines: [1, 2, 3] },
+      { file: "/file/1", added_lines: [1, 2, 3] },
+      { file: "/file/2", added_lines: [1, 2, 3] },
+      { file: "/file/3", added_lines: [1, 2, 3] },
     ]
     const messageCallback = jest.fn()
 
