@@ -6,7 +6,10 @@
 
 > This plugin reads ktlint reports and posts inline comments in pull requests.
 
-The plugin is still under active development and testing.
+Screenshot of an inline comment in a GitHub pull request:
+
+![inline comment](/screenshots/screenshot-ktlint-inline-comment.png?raw=true "Inline Comment")
+
 
 ## Requirements
 
@@ -32,7 +35,7 @@ At a glance:
 // dangerfile.js
 import { schedule } from 'danger'
 
-const ktlintReport  = require("danger-plugin-ktlint-report")
+const ktlintReport = require("danger-plugin-ktlint-report")
 schedule(ktlintReport.scan())
 ```
 ## Changelog
