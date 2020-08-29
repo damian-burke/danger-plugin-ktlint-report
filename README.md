@@ -1,3 +1,12 @@
+# Deprecated by danger-plugin-lint-report
+
+This DangerJS plugin is functional, but no longer being worked on.
+
+Consider switching to [danger-plugin-lint-report](https://github.com/damian-burke/danger-plugin-lint-report).
+
+It can parse ktlint reports (and more, for example detekt, Android lint, Swift Lint, ...) as well and offers more configuration options.
+
+
 # danger-plugin-ktlint-report
 
 [![Build Status](https://travis-ci.org/damian-burke/danger-plugin-ktlint-report.svg?branch=master)](https://travis-ci.org/damian-burke/danger-plugin-ktlint-report)
@@ -9,7 +18,6 @@
 Screenshot of an inline comment in a GitHub pull request:
 
 ![inline comment](/screenshots/screenshot-ktlint-inline-comment.png?raw=true "Inline Comment")
-
 
 ## Requirements
 
